@@ -1,2 +1,5 @@
-<h1>Here is some images</h1>
-<% Faraday.get "(https://api.nasa.gov/DONKI/CME?startDate=yyyy-MM-dd&endDate=yyyy-MM-dd&api_key=lhtGggCnnVClz4TUBGb3DUMRz5Jp6oKc2r8MofNP").status  %>
+<h1>Here is some images
+</h1>
+<% @images[0..10].each do |image| %>
+ <%= image_tag image['img_src'], style: "max-height: 300px; max-width: 300px;" %>
+<%end%>
