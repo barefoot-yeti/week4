@@ -10,6 +10,9 @@
   <li>
     <%= description = JSON.parse(@weather_result.body)['weather'].first['description'] %>
     <%= '<i class="fas fa-solid fa-sun"></i>'.html_safe if description == 'clear sky' %>
+    <%= '<i class="fa-solid fa-cloud-sun"></i>'.html_safe if description == 'clouds' %>
+    <%= '<i class="fa-solid fa-cloud-showers"></i>'.html_safe if description == 'Rain' %>
+
   </li>
   <li><%= JSON.parse(@weather_result.body)['main']['temp'] %></li>
 </ul>
